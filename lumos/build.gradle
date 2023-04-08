@@ -30,6 +30,17 @@ android {
         jvmTarget = '1.8'
     }
 }
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.tgalshemeri"
+            artifactId = "Lumos"
+            version = "1.0"
+
+            from(components["kotlin"])
+        }
+    }
+}
 
 dependencies {
 
@@ -41,15 +52,3 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = "com.github.tgalshemeri"
-                artifactId = "Lumos"
-                version = '1.0'
-            }
-        }
-    }
-}
