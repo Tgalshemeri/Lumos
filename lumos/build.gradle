@@ -46,7 +46,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = "com.elmaravilla.Lumos"
+                groupId = "com.github.tgalshemeri"
                 artifactId = "Lumos"
                 version = '0.1'
             }
